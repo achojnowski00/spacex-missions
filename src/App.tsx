@@ -1,34 +1,49 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { gql } from '@apollo/client'
 import './App.css'
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import Header from './components/modules/Header/Header'
+import { Route, Routes, Link } from "react-router-dom";
+// import { ApolloProvider } from "react-apollo";
+// import { ApolloClient } from "apollo-client";
+// import { createHttpLink } from "apollo-link-http";
+// import { InMemoryCache } from "apollo-cache-inmemory";
+
+// export const link = createHttpLink({
+//   uri: "https://studio.apollographql.com/public/SpaceX-pxxbxen"
+// });
+
+export const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  // uri: "https://studio.apollographql.com/public/SpaceX-pxxbxen",
+  uri: "https://spacex-production.up.railway.app/,"
+});
+
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <Header />
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+
+
+
+      <Routes>
+        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/launches" element={<h1>Launches</h1>} />
+        <Route path="/favorites" element={<h1>Favorites</h1>} />
+
+        {/* 404 Not Found */}
+        <Route path="/*" element={<h1>404</h1>} />
+      </Routes>
+    </ApolloProvider>
   )
 }
 
 export default App
+
