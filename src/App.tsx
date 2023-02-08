@@ -4,6 +4,10 @@ import './App.css'
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import Header from './components/modules/Header/Header'
 import { Route, Routes, Link } from "react-router-dom";
+
+// Pages
+import NotFound from './components/pages/404NotFound/NotFound'
+
 // import { ApolloProvider } from "react-apollo";
 // import { ApolloClient } from "apollo-client";
 // import { createHttpLink } from "apollo-link-http";
@@ -39,7 +43,7 @@ function App() {
         <Route path="/favorites" element={<h1>Favorites</h1>} />
 
         {/* 404 Not Found */}
-        <Route path="/*" element={<h1>404</h1>} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </ApolloProvider>
   )
