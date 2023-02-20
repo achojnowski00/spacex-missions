@@ -37,7 +37,7 @@ function App() {
         <Route path="/favorites" element={<h1>Favorites</h1>} />
 
         {/* 404 Not Found */}
-        <Route path="/*" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </ApolloProvider>
   );
