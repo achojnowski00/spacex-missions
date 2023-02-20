@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+
+  /* Padding to make space for header */
+  padding-top: 70px;
+}
+
+.wrapper1280 {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper1080 {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
