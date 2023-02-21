@@ -3,9 +3,10 @@
   top: 0;
   left: 0;
   width: 100vw;
-  background: #ffffff;
+  background: linear-gradient(180deg, #fff 0%, transparent 100%);
   z-index: 100;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(7px);
 
   &-wrap {
     display: flex;
