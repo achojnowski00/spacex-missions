@@ -53,9 +53,9 @@ const LaunchesList = () => {
 
   if (loading)
     return (
-      <p className="wrapper1080">
+      <div className="wrapper1080">
         <Loading />
-      </p>
+      </div>
     );
 
   if (error) return <p className="wrapper1080">Something went wrong</p>;
