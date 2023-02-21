@@ -9,6 +9,7 @@ import { Route, Routes, Link } from "react-router-dom";
 import NotFound from "./components/pages/404NotFound/NotFound";
 import LaunchesPage from "./components/pages/LaunchesPage/LaunchesPage";
 import HomePage from "./components/pages/HomePage/HomePage";
+import FavPage from "./components/pages/FavPage/FavPage";
 
 // import { ApolloProvider } from "react-apollo";
 // import { ApolloClient } from "apollo-client";
@@ -35,7 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/launches" element={<LaunchesPage />} />
-        <Route path="/favorites" element={<h1>Favorites</h1>} />
+        <Route path="/favorites" element={<FavPage />} />
 
         {/* 404 Not Found */}
         <Route path="*" element={<NotFound />} />
